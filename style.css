@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    width: 102px;
+
+}
+
+.square {
+    border: solid 1px black;
+    width: 15px;
+    height: 15px;
+}
