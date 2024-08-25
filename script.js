@@ -1,18 +1,19 @@
 const container = document.querySelector(".container");
 
-let containerWidth = 32;
+const containerDimensions = 600;
+let canvasSize = 50;
 
-for (i = 0; i < containerWidth * containerWidth; i++) {
-    drawContainer();
+
+function drawCanvas(canvasSize) {
+for (i = 0; i < canvasSize * canvasSize; i++) {
     drawSquare();
-}
-
-//don't know why but there is 2px added in browser
-function drawContainer() {
-    container.style.width = (containerWidth * 15 + 2) + "px";
-}
+}}
 
 function drawSquare() {
     const square = document.createElement("div");
     square.classList.add("square");
+    square.style.width = ((containerDimensions/canvasSize) + "px")
+    square.style.height = ((containerDimensions/canvasSize) + "px")
     container.appendChild(square)}
+
+drawCanvas(canvasSize)
