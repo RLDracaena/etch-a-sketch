@@ -64,9 +64,15 @@ generateCanvas.addEventListener("click", () => {
 
     squares.forEach((div) => {div.addEventListener("click", () => {div.style.backgroundColor = colorChoice})})
 
+    //clear button
+    const clearButton = document.querySelector(".clear-button")
+    clearButton.addEventListener("click", clearBoard)
+
+    function clearBoard() {
+    squares.forEach((div) => {div.style.backgroundColor = "white"})
+
+
     }
-
-
 
 // color buttons
 const currentColor = document.querySelector(".current-color")
@@ -85,4 +91,5 @@ yellowButton.addEventListener("click", () => {
     colorChoice = "yellow"
     currentColor.style.backgroundColor = colorChoice})
 
+}
 

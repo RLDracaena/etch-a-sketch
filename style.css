@@ -15,26 +15,62 @@ body {
     font-style: normal;
 }
 
+.main-container {
+    display: flex;
+    gap: 20px;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid teal;
+    box-shadow: 0 0 3px;
+    gap: 30px;
+    padding: 20px;
+    background-color: white;
+    width: 200px;
+    height: 600px;
+}
+
 .heading {
     font-size: 100px;
     margin-bottom: 20px;
 }
 
 .canvas-size-container,
-.color-choice-container {
-    width: 650px;
-    height: 50px;
+.color-choice-container,
+.current-choice-container,
+.clear-container{
+    /* width: 100px; */
+    /* height: 650px; */
     border: 1px solid teal;
     display: flex;
 }
 
 .canvas-size-container {
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .color-choice-container {
     justify-content: center;
+    flex-wrap: wrap;
     gap: 5px;
+}
+
+.current-color-container {
+    display: flex;
+    justify-content: center;
+}
+
+.clear-container {
+    flex-direction: column;
+}
+
+.clear-button {
+    height: 40px;
+    font-family: inherit;
+    font-size: 25px;
 }
 
 .generate-canvas {
@@ -46,6 +82,7 @@ body {
 .current-color {
     width: 50px;
     height: 50px;
+    border: 1px solid grey;
 }
 
 .current-size {
@@ -71,6 +108,10 @@ body {
     flex-shrink: 0;
 }
 
+.settings-border.container-border {
+    width: 250px;
+}
+
 .container {
     outline: solid 1px teal;
     box-shadow: 0 0 3px;
@@ -90,6 +131,10 @@ body {
     width: 49px;
     border: 5px solid grey;
     border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
 }
 
 .red-button {
