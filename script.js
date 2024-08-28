@@ -34,7 +34,7 @@ generateCanvas.addEventListener("click", () => {
     clearCanvas()
     canvasSize = Number(prompt("Please enter a size between 1 and 100"))
 
-    while (!Number.isInteger(canvasSize) || canvasSize > 100) {
+    while (!Number.isInteger(canvasSize) || canvasSize > 100 || canvasSize < 0) {
         canvasSize = Number(prompt("Please enter a size between 1 and 100"))
     }
 
@@ -69,27 +69,109 @@ generateCanvas.addEventListener("click", () => {
     clearButton.addEventListener("click", clearBoard)
 
     function clearBoard() {
-    squares.forEach((div) => {div.style.backgroundColor = "white"})
+    squares.forEach((div) => {div.style.backgroundColor = "white"}) }
+
+    
 
 
-    }
+//rainbow button
+
+    const rainbowButton = document.querySelector(".rainbow-button")
+    rainbowButton.addEventListener("click", rainbowChoice)
+
+    function rainbowChoice() {
+        
+    squares.forEach((div) => {div.addEventListener("mouseenter", () => {
+        let rainbow = ["red", "blue", "yellow", "green", "purple"]
+        let random = Math.floor(Math.random() * rainbow.length)
+        colorChoice = rainbow[random]
+        isMouseEnter = "true"
+        if (isMouseDown === "true") {
+        {div.style.backgroundColor = colorChoice}
+    }})})
+    currentColor.innerText = "?"
+    currentColor.style.backgroundColor = "white"
+}
 
 // color buttons
 const currentColor = document.querySelector(".current-color")
 const redButton = document.querySelector(".red-button")
 redButton.addEventListener("click", () => {
     colorChoice = "red"
-    currentColor.style.backgroundColor = colorChoice})
+    squares.forEach((div) => {div.addEventListener("mouseenter", () => {
+        colorChoice = "red"
+        isMouseEnter = "true"
+        if (isMouseDown === "true") {
+        {div.style.backgroundColor = colorChoice}
+        
+    }})})
+    currentColor.innerText = ""
+    currentColor.style.backgroundColor = colorChoice
+    })
 
 const blueButton = document.querySelector(".blue-button")
 blueButton.addEventListener("click", () => {
     colorChoice = "blue"
-    currentColor.style.backgroundColor = colorChoice})
+    squares.forEach((div) => {div.addEventListener("mouseenter", () => {
+        colorChoice = "blue"
+        isMouseEnter = "true"
+        if (isMouseDown === "true") {
+        {div.style.backgroundColor = colorChoice}
+        
+    }})})
+    currentColor.innerText = ""
+    currentColor.style.backgroundColor = colorChoice
+})
 
 const yellowButton = document.querySelector(".yellow-button")
 yellowButton.addEventListener("click", () => {
     colorChoice = "yellow"
-    currentColor.style.backgroundColor = colorChoice})
+    squares.forEach((div) => {div.addEventListener("mouseenter", () => {
+        colorChoice = "yellow"
+        isMouseEnter = "true"
+        if (isMouseDown === "true") {
+        {div.style.backgroundColor = colorChoice}
+        
+    }})})
+    currentColor.innerText = ""
+    currentColor.style.backgroundColor = colorChoice
+})
+
+const greenButton = document.querySelector(".green-button")
+greenButton.addEventListener("click", () => {
+    colorChoice = "green"
+    squares.forEach((div) => {div.addEventListener("mouseenter", () => {
+        colorChoice = "green"
+        isMouseEnter = "true"
+        if (isMouseDown === "true") {
+        {div.style.backgroundColor = colorChoice}
+        
+    }})})
+    currentColor.innerText = ""
+    currentColor.style.backgroundColor = colorChoice
+
+})
+
+const purpleButton = document.querySelector(".purple-button")
+purpleButton.addEventListener("click", () => {
+    colorChoice = "purple"
+    squares.forEach((div) => {div.addEventListener("mouseenter", () => {
+        colorChoice = "purple"
+        isMouseEnter = "true"
+        if (isMouseDown === "true") {
+        {div.style.backgroundColor = colorChoice}
+        
+    }})})
+    currentColor.innerText = ""
+    currentColor.style.backgroundColor = colorChoice
+
+})
+
 
 }
+
+
+
+
+    
 
