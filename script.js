@@ -34,7 +34,7 @@ generateCanvas.addEventListener("click", () => {
     clearCanvas()
     canvasSize = Number(prompt("Please enter a size between 1 and 100"))
 
-    while (!Number.isInteger(canvasSize) || canvasSize > 100 || canvasSize < 0) {
+    while (!Number.isInteger(canvasSize) || canvasSize > 100 || canvasSize < 1) {
         canvasSize = Number(prompt("Please enter a size between 1 and 100"))
     }
 
@@ -56,11 +56,11 @@ generateCanvas.addEventListener("click", () => {
 
     squares.forEach((div) => {div.addEventListener("mouseup", () => {isMouseDown = "false"})})
 
-    squares.forEach((div) => {div.addEventListener("mouseenter", () => {
-        isMouseEnter = "true"
-        if (isMouseDown === "true") {
-        {div.style.backgroundColor = colorChoice}
-    }})})
+    // squares.forEach((div) => {div.addEventListener("mouseenter", () => {
+    //     isMouseEnter = "true"
+    //     if (isMouseDown === "true") {
+    //     {div.style.backgroundColor = colorChoice}
+    // }})})
 
     squares.forEach((div) => {div.addEventListener("click", () => {div.style.backgroundColor = colorChoice})})
 
